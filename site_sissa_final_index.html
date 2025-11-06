@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assi anoughal ? 💍</title>
+  <style>
+    body {
+      background-color: #ffe6f2;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff66b2;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px #ffb3d9;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    button {
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #ff66b2;
+      transform: scale(1.1);
+    }
+
+    #baby {
+      display: none;
+      margin-top: 30px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px #ff99cc;
+    }
+
+    #youpi {
+      display: none;
+      font-size: 3em;
+      color: #ff4081;
+      margin-top: 20px;
+      animation: bounce 0.8s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Assi anoughal ? 💖</h1>
+
+  <div class="buttons">
+    <button id="yesBtn">Oui 💍</button>
+    <button id="noBtn">Non 😅</button>
+  </div>
+
+  <!-- 🍼 Ton image de bébé souriant -->
+  <img id="baby" src="téléchargement.jpeg" alt="Bébé qui sourit">
+
+  <!-- 🎉 Texte "Youpi !" -->
+  <div id="youpi">Youpi ! 😍💖</div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const babyImg = document.getElementById('baby');
+    const youpiText = document.getElementById('youpi');
+    let yesSize = 1;
+
+    noBtn.addEventListener('click', () => {
+      yesSize += 0.2; // agrandit le bouton Oui
+      yesBtn.style.transform = `scale(${yesSize})`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.querySelector('.buttons').style.display = 'none';
+      document.querySelector('h1').style.display = 'none';
+      babyImg.style.display = 'block';
+      youpiText.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
